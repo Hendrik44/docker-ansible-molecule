@@ -4,5 +4,5 @@
 A minimal docker container to run molecule tests in CI e.g. Jenkins based on a small python 3.6 alpine image.
 
 ## Usage
-`docker run --rm -v $PWD/:/home/myuser/ -v /var/run/docker.sock:/var/run/docker.sock hendrik44/docker-ansible-molecule`
+`docker run --rm -v $PWD/:/home/myuser/ansible-role-name -v /var/run/docker.sock:/var/run/docker.sock hendrik44/docker-ansible-molecule`
 
