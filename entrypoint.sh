@@ -1,4 +1,4 @@
 #!/bin/sh
 molecule --version
 cd *
-molecule test
+molecule test --all
