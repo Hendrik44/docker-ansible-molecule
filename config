@@ -1,0 +1,17 @@
+Host *
+    StrictHostKeyChecking no
+
+host bitbucket.org
+	HostName bitbucket.org
+	IdentityFile /root/.ssh/id_rsa
+	User git
+
+Host github.com
+	HostName github.com
+	IdentityFile /root/.ssh/id_rsa
+	User git
+
+Host gitlab.com
+	HostName gitlab.com
+	IdentityFile /root/.ssh/id_rsa
+	User git

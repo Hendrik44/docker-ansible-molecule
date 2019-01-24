@@ -6,3 +6,6 @@ A minimal docker container to run molecule tests in CI e.g. Jenkins based on a s
 ## Usage
 `docker run --rm -v $PWD/:/home/myuser/ansible-role-name -v /var/run/docker.sock:/var/run/docker.sock hendrik44/docker-ansible-molecule`
 
+To be able to git clone private repos mount the ssh-key like this:
+`docker run --rm -v $PWD/:/home/myuser/ansible-role-name -v /var/run/docker.sock:/var/run/docker.sock -v ~/.ssh/id_rsa:/root/.ssh/id_rsa:ro hendrik44/docker-ansible-molecule`
+
