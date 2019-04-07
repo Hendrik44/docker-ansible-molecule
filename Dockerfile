@@ -1,7 +1,7 @@
 FROM python:3.6-alpine
 
-ARG ANSIBLE_VERSION=2.7.9
-ARG MOLECULE_VERSION=2.19.0
+ARG ANSIBLE_VERSION=2.7.10
+ARG MOLECULE_VERSION=2.20.0
 ARG YAMLLINT_VERSION=1.15.0
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories \
