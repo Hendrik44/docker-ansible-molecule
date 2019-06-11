@@ -1,8 +1,8 @@
 FROM python:3.6-alpine
 
-ARG ANSIBLE_VERSION=2.8.0
+ARG ANSIBLE_VERSION=2.8.1
 ARG MOLECULE_VERSION=2.20.1
-ARG YAMLLINT_VERSION=1.15.0
+ARG YAMLLINT_VERSION=1.16.0
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories \
 	&& apk add --update curl openssl ca-certificates bash git zip docker openssh-client \
