@@ -1,7 +1,7 @@
 FROM python:3.6-alpine
 
-ARG ANSIBLE_VERSION=2.8.2
-ARG MOLECULE_VERSION=2.20.1
+ARG ANSIBLE_VERSION=2.8.3
+ARG MOLECULE_VERSION=2.20.2
 ARG YAMLLINT_VERSION=1.16.0
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories \
@@ -9,6 +9,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/community" >> /etc/
 	&& apk add --no-cache --virtual build-dependencies linux-headers build-base python3-dev libffi-dev openssl-dev py-psutil \
 	&& pip3 install --no-cache-dir --upgrade pip setuptools \
 	&& pip3 install --upgrade ansible==${ANSIBLE_VERSION} molecule==${MOLECULE_VERSION} yamllint==${YAMLLINT_VERSION} docker \
+	&& pip3 install ansible-lint==4.0.1 \
 	&& apk del build-dependencies \
     && rm -rf /var/cache/apk/* \
     && rm -r /root/.cache \
