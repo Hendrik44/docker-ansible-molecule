@@ -1,8 +1,8 @@
-FROM python:3.6-alpine
+FROM python:3.9-alpine
 
-ARG ANSIBLE_VERSION=2.9.4
+ARG ANSIBLE_VERSION=2.9.5
 ARG MOLECULE_VERSION=2.22
-ARG YAMLLINT_VERSION=1.19.0
+ARG YAMLLINT_VERSION=1.20.0
 ARG ANSIBLELINT_VERSION=4.2.0
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories \
