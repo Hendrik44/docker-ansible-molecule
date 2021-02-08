@@ -1,9 +1,9 @@
 FROM python:3.9-alpine
 
-ARG ANSIBLE_VERSION=2.9.12
-ARG MOLECULE_VERSION=3.0.6
+ARG ANSIBLE_VERSION=2.9.13
+ARG MOLECULE_VERSION=3.0.8
 ARG YAMLLINT_VERSION=1.24.2
-ARG ANSIBLELINT_VERSION=4.2.0
+ARG ANSIBLELINT_VERSION=4.3.4
 ARG MOLECULE_GOSS=1.0.0
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories \
