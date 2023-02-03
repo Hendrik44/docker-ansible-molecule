@@ -1,18 +1,15 @@
-FROM python:3.9-alpine
+FROM python:3.10-alpine
 
-ARG ANSIBLE_VERSION=2.9.15
-ARG MOLECULE_VERSION=3.1.5
-ARG YAMLLINT_VERSION=1.25.0
-ARG ANSIBLELINT_VERSION=4.3.7
-ARG MOLECULE_GOSS=1.0.0
-ARG MOLECULE_DOCKER=0.2.4
+ARG ANSIBLE_VERSION=7.2.0
+ARG MOLECULE_VERSION=4.0.4
+ARG YAMLLINT_VERSION=1.29.0
+ARG ANSIBLELINT_VERSION=6.12.1
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories \
 	&& apk add --update curl openssl ca-certificates bash git zip docker openssh-client \
-	&& apk add --no-cache --virtual build-dependencies linux-headers build-base python3-dev libffi-dev openssl-dev py-psutil rust cargo \
+	&& apk add --no-cache --virtual build-dependencies linux-headers build-base python3-dev libffi-dev openssl-dev py-psutil \
 	&& pip3 install --no-cache-dir --upgrade pip setuptools \
-	&& pip3 install --upgrade ansible==${ANSIBLE_VERSION} molecule==${MOLECULE_VERSION} yamllint==${YAMLLINT_VERSION} docker \
-	molecule-goss==${MOLECULE_GOSS} molecule-docker==${MOLECULE_DOCKER} \
+	&& pip3 install --upgrade ansible==${ANSIBLE_VERSION} molecule==${MOLECULE_VERSION} yamllint==${YAMLLINT_VERSION} docker 'molecule-plugins[docker]' \
 	&& pip3 install ansible-lint==${ANSIBLELINT_VERSION} \
 	&& apk del build-dependencies \
     && rm -rf /var/cache/apk/* \
